@@ -34,5 +34,23 @@
     "user_input": ["how", "are", "you"],
     "bot_response": "I'm great! Thanks for asking.",
     "required_words": ["how", "are", "you"]
+  },
+  {
+    "response_type": "sympathy",
+    "user_input": ["sad", "upset", "hurt", "unhappy", "depressed", "down", "cry"],
+    "bot_response": "I'm really sorry to hear that. Remember, it's okay to feel sad sometimes.",
+    "required_words": ["sad", "upset"]
+  },
+  {
+    "response_type": "sympathy",
+    "user_input": ["I miss", "lost", "heartbroken"],
+    "bot_response": "I'm here for you. It's tough to go through such feelings.",
+    "required_words": ["miss", "lost"]
+  },
+  {
+    "response_type": "sympathy",
+    "user_input": ["everything is bad", "nothing is going well"],
+    "bot_response": "I'm sorry to hear that. Things will get better; just hang in there!",
+    "required_words": ["bad", "nothing"]
   }
 ]

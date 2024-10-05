@@ -1,11 +1,10 @@
 import random
 
-
 def random_string():
     random_list = [
-        "Silakan coba menulis sesuatu yang lebih deskriptif.",        
-        "Apakah kamu keberatan mencoba mengulanginya?",
-        "Saya belum bisa menjawabnya, silakan coba tanyakan hal lain."    
+        "Please try typing something more descriptive.",        
+        "Would you mind trying to repeat that?",
+        "I can't answer that yet, please try asking something else."    
     ]
 
     list_count = len(random_list)
