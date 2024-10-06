@@ -37,7 +37,15 @@
   },
   {
     "response_type": "sympathy",
-    "user_input": ["sad", "upset", "hurt", "unhappy", "depressed", "down", "cry"],
+    "user_input": [
+      "sad",
+      "upset",
+      "hurt",
+      "unhappy",
+      "depressed",
+      "down",
+      "cry"
+    ],
     "bot_response": "I'm really sorry to hear that. Remember, it's okay to feel sad sometimes.",
     "required_words": ["sad", "upset"]
   },
@@ -52,5 +60,46 @@
     "user_input": ["everything is bad", "nothing is going well"],
     "bot_response": "I'm sorry to hear that. Things will get better; just hang in there!",
     "required_words": ["bad", "nothing"]
+  },
+  {
+    "response_type": "anger",
+    "user_input": [
+      "angry",
+      "mad",
+      "furious",
+      "annoyed",
+      "irritated",
+      "frustrated"
+    ],
+    "bot_response": "Whoa! Calm down! 😠 Let's take a moment to breathe.",
+    "required_words": [
+      "angry",
+      "mad",
+      "furious",
+      "annoyed",
+      "irritated",
+      "frustrated"
+    ]
+  },
+  {
+    "response_type": "surprised",
+    "user_input": [
+      "wow",
+      "unbelievable",
+      "no way",
+      "amazing",
+      "incredible",
+      "shocked",
+      "astonished",
+      "surprised"
+    ],
+    "bot_response": "Wow, that's surprising! 😲",
+    "required_words": ["wow", "surprised", "unbelievable", "shocked"]
+  },
+  {
+    "response_type": "wink",
+    "user_input": ["flirt", "wink", "playful", "tease"],
+    "bot_response": "Gotcha! 😉",
+    "required_words": ["wink", "flirt"]
   }
 ]

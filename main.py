@@ -36,6 +36,21 @@ def get_response(input_string):
     if any(word in split_message for word in sad_words):
         return "I'm really sorry to hear that. Remember, it's okay to feel sad sometimes. " + emoticons.get("sad")
 
+    # Cek untuk kalimat marah
+    angry_words = ["angry", "mad", "furious", "annoyed", "irritated", "frustrated"]
+    if any(word in split_message for word in angry_words):
+        return "Whoa! Calm down! " + emoticons.get("angry") + " Let's take a moment to breathe."
+    
+    # Cek untuk kalimat terkejut
+    surprised_words = ["wow", "amazing", "surprised", "unbelievable", "shocked", "incredible"]
+    if any(word in split_message for word in surprised_words):
+        return "Oh wow! That sounds surprising! " + emoticons.get("surprised")
+    
+    # Cek untuk kalimat wink
+    wink_words = ["flirt", "wink", "playful", "tease"]
+    if any(word in split_message for word in wink_words):
+        return "Gotcha! " + emoticons.get("wink")
+    
     for response in response_data:
         response_score = 0
         required_score = 0
@@ -76,6 +91,9 @@ class ChatbotGUI:
         self.root.geometry("500x600")
         self.root.configure(bg="#ededed")
 
+        # Nama bot
+        self.bot_name = "Alpian"  # Set nama bot di sini
+
         # Area tampilan chat
         self.chat_display = scrolledtext.ScrolledText(self.root, wrap=tk.WORD, state='disabled', bg="#fafafa", fg="#000")
         self.chat_display.place(x=10, y=10, width=480, height=450)
@@ -102,8 +120,8 @@ class ChatbotGUI:
         self.dark_mode_button.place(x=10, y=570, width=480, height=40)
 
         # Menampilkan ucapan selamat datang
-        self.welcome_message = "Selamat datang di chatbot! Saya di sini untuk membantu Anda. 😊"
-        self.update_chat(f"Bot: {self.welcome_message}")
+        self.welcome_message = f"{self.bot_name}: Selamat datang di chatbot! Saya di sini untuk membantu Anda. 😊"
+        self.update_chat(self.welcome_message)
 
         # Menambahkan label untuk informasi pembuat
         self.credit_label = tk.Label(self.root, text="Dibuat oleh ", bg="#ededed", font=("Arial", 10))
@@ -127,7 +145,7 @@ class ChatbotGUI:
         self.update_chat(f"You: {user_message}")
 
         bot_response = get_response(user_message)
-        self.update_chat(f"Bot: {bot_response}")
+        self.update_chat(f"{self.bot_name}: {bot_response}")
 
     def update_chat(self, message):
         self.chat_display.configure(state='normal')
@@ -139,7 +157,7 @@ class ChatbotGUI:
         # Menghapus semua teks dari area tampilan chat kecuali ucapan selamat datang
         self.chat_display.configure(state='normal')
         self.chat_display.delete(1.0, tk.END)  # Menghapus semua teks
-        self.update_chat(f"Bot: {self.welcome_message}")  # Menampilkan kembali ucapan selamat datang
+        self.update_chat(f"{self.bot_name}: {self.welcome_message}")  # Menampilkan kembali ucapan selamat datang
         self.chat_display.configure(state='disabled')
 
     def confirm_quit(self):
@@ -165,20 +183,18 @@ class ChatbotGUI:
             self.root.configure(bg="#333333")
             self.chat_display.configure(bg="#555555", fg="#fff")
             self.user_input.configure(bg="#777777", fg="#fff")
-            self.send_button.configure(bg="#007acc", fg="white")
-            self.clear_button.configure(bg="#ff3333", fg="white")
-            self.quit_button.configure(bg="#ff3333", fg="white")
-            self.dark_mode_button.configure(bg="#007acc", fg="white")
+            self.send_button.configure(bg="#444444", fg="white")
+            self.clear_button.configure(bg="#ff6666", fg="white")
+            self.quit_button.configure(bg="#ff6666", fg="white")
+            self.dark_mode_button.configure(bg="#444444", fg="white")
             self.credit_label.configure(bg="#333333", fg="#fff")  # Update warna label
             self.github_link.configure(bg="#333333", fg="lightblue")  # Update warna label GitHub
             self.is_dark_mode = True
 
     def open_github(self, event):
-        # Fungsi untuk membuka link GitHub
-        webbrowser.open("https://github.com/AlpianPPLG")
+        webbrowser.open("https://github.com/AlpianPPLG")  # Ganti dengan URL GitHub Anda
 
-# Inisialisasi aplikasi
 if __name__ == "__main__":
     root = tk.Tk()
-    app = ChatbotGUI(root)
+    chatbot = ChatbotGUI(root)
     root.mainloop()
